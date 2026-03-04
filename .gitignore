@@ -1,0 +1,11 @@
+# Do not track compiled Python files
+__pycache__/
+*.pyc
+
+# Do not track the virtual environment
+venv/
+
+# Do not track pytest cache
+.pytest_cache/
+
+.env
