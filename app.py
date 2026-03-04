@@ -41,7 +41,7 @@ def main_conversion_function(value, from_unit, to_unit):
     elif from_unit == 'kg' and to_unit == 'pounds':
         return kg_to_pounds(value)
     elif from_unit == 'pounds' and to_unit == 'kg':
-        return pounds_to_kg(value)
+        return -pounds_to_kg(value)  # BUG on purpose so the CI test fails
     elif from_unit == 'grams' and to_unit == 'pounds':
         return grams_to_pounds(value)
     elif from_unit == 'pounds' and to_unit == 'grams':
@@ -61,14 +61,14 @@ def index():
 
             result = main_conversion_function(value, from_unit, to_unit)
 
-            # results as strings
+            # results as strings for display
             if result != "Invalid conversion":
                 result = f"{value} {from_unit} is equal to {result} {to_unit}"
-            
         except ValueError:
             result = "Invalid input"
 
     return render_template('index.html', result=result)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=False)
