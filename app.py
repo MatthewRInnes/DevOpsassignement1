@@ -41,7 +41,7 @@ def main_conversion_function(value, from_unit, to_unit):
     elif from_unit == 'kg' and to_unit == 'pounds':
         return kg_to_pounds(value)
     elif from_unit == 'pounds' and to_unit == 'kg':
-        return -pounds_to_kg(value)  # BUG on purpose so the CI test fails
+        return pounds_to_kg(value)  # BUG on purpose so the CI test fails
     elif from_unit == 'grams' and to_unit == 'pounds':
         return grams_to_pounds(value)
     elif from_unit == 'pounds' and to_unit == 'grams':
